@@ -1,0 +1,12 @@
+C:\Users\gnava\source\repos\PaintingSoft\PaintingSoft\bin\Debug\PaintingSoft.exe.config
+C:\Users\gnava\source\repos\PaintingSoft\PaintingSoft\bin\Debug\PaintingSoft.exe
+C:\Users\gnava\source\repos\PaintingSoft\PaintingSoft\bin\Debug\PaintingSoft.pdb
+C:\Users\gnava\source\repos\PaintingSoft\PaintingSoft\bin\Debug\PaintingSoft.xml
+C:\Users\gnava\source\repos\PaintingSoft\PaintingSoft\obj\Debug\PaintingSoft.vbprojAssemblyReference.cache
+C:\Users\gnava\source\repos\PaintingSoft\PaintingSoft\obj\Debug\PaintingSoft.Form1.resources
+C:\Users\gnava\source\repos\PaintingSoft\PaintingSoft\obj\Debug\PaintingSoft.Resources.resources
+C:\Users\gnava\source\repos\PaintingSoft\PaintingSoft\obj\Debug\PaintingSoft.vbproj.GenerateResource.cache
+C:\Users\gnava\source\repos\PaintingSoft\PaintingSoft\obj\Debug\PaintingSoft.vbproj.CoreCompileInputs.cache
+C:\Users\gnava\source\repos\PaintingSoft\PaintingSoft\obj\Debug\PaintingSoft.exe
+C:\Users\gnava\source\repos\PaintingSoft\PaintingSoft\obj\Debug\PaintingSoft.xml
+C:\Users\gnava\source\repos\PaintingSoft\PaintingSoft\obj\Debug\PaintingSoft.pdb
