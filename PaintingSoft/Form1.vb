@@ -134,8 +134,8 @@ Public Class Form1
     End Sub
 
     Private Sub Text_Click(sender As Object, e As EventArgs)
-        'Dim x As Integer = 100
-        'Dim y As Integer = 200
+        Dim x As Integer = 100
+        Dim y As Integer = 200
         'g.DrawString("Hello.", New Font("Arial", 12), Brushes.Black, x, y)
     End Sub
 
