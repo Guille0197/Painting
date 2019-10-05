@@ -10,3 +10,4 @@ C:\Users\gnava\source\repos\PaintingSoft\PaintingSoft\obj\Debug\PaintingSoft.vbp
 C:\Users\gnava\source\repos\PaintingSoft\PaintingSoft\obj\Debug\PaintingSoft.exe
 C:\Users\gnava\source\repos\PaintingSoft\PaintingSoft\obj\Debug\PaintingSoft.xml
 C:\Users\gnava\source\repos\PaintingSoft\PaintingSoft\obj\Debug\PaintingSoft.pdb
+C:\Users\gnava\source\repos\PaintingSoft\PaintingSoft\obj\Debug\PaintingSoft.AboutBox1.resources

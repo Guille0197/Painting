@@ -1,7 +1,10 @@
 ﻿Imports System.Drawing.Drawing2D
 Imports System.Drawing.Brushes
+Imports System.IO
+
 Public Class Form1
     Dim g As Graphics
+    Dim FUENTE As Font
 
     'pen sttings
     Dim mypen, myeraser As Pen
@@ -28,6 +31,9 @@ Public Class Form1
 
     Dim shape As String
 
+    Dim textColor As Color
+    Dim texto As String
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         g = PictureBox1.CreateGraphics
 
@@ -42,11 +48,13 @@ Public Class Form1
         hs = 0
         mp = 0
         totpoint = 0
+
+        PictureBox1.Image = New Bitmap(PictureBox1.ClientRectangle.Width, PictureBox1.ClientRectangle.Height)
     End Sub
 
     Private Sub BtnDraw_Click(sender As Object, e As EventArgs) Handles BtnDraw.Click
         shape = "Draw"
-        PictureBox1.Cursor = New Cursor("C:\Users\gnava\source\repos\Paint-vb-2019\Paint-vb-2019\Pencil.cur")
+        PictureBox1.Cursor = New Cursor("C:\Users\gnava\source\repos\PaintingSoft\PaintingSoft\Pencil.cur")
     End Sub
 
     Private Sub BtnLine_Click(sender As Object, e As EventArgs) Handles BtnLine.Click
@@ -72,16 +80,6 @@ Public Class Form1
         If (OpenFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK) Then
             bs = "Texture"
             PictureBox1.Load(OpenFileDialog1.FileName)
-
-            For Each c In GBBrush.Controls
-                If TypeOf c Is Button Then
-                    If c.Text = "Texture" Then
-                        c.ForeColor = Color.Red
-                    Else
-                        c.Forecolor = Color.White
-                    End If
-                End If
-            Next
         End If
     End Sub
 
@@ -128,20 +126,97 @@ Public Class Form1
     End Sub
 
     Private Sub NuevoToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem.Click
-        MsgBox("¿Desea crear un nuevo archivo?")
-        g.Clear(PictureBox1.BackColor)
+
+        Dim Msg, Style, Title, Response, MyString
+        Msg = "¿Desea crear un nuevo archivo?"
+        Style = vbYesNo + vbQuestion + vbDefaultButton2
+        Title = "Crear un nuevo archivo"
+
+        Response = MsgBox(Msg, Style, Title)
+        If Response = vbYes Then
+            g.Clear(PictureBox1.BackColor)
+            brushcolor1 = Color.Black
+            pensize = 2
+            nudPenSize.Value = pensize
+            pencolor = Color.Black
+            ColorDialog1.Color = Color.Black
+            brushcolor1 = Color.Black
+            BtnColor1.BackColor = Color.Black
+            BtnColor2.BackColor = Color.White
+            chkDrb.Checked = False
+            CmbHatchStyle.Items.Clear()
+            PictureBox1.BackColor = Color.White
+        Else    ' User chose No.
+            MyString = "No"    ' Perform some action.
+        End If
 
     End Sub
 
-    Private Sub Text_Click(sender As Object, e As EventArgs)
-        Dim x As Integer = 100
-        Dim y As Integer = 200
-        'g.DrawString("Hello.", New Font("Arial", 12), Brushes.Black, x, y)
+    Private Sub FontText_Click(sender As Object, e As EventArgs) Handles fontText.Click
+        If FontDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+            FUENTE = New Font(FontDialog1.Font, FontStyle.Bold)
+        End If
+
+        texto = InputBox("ESCRIBE EL TEXTO")
+
+        If ColorDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+            textColor = New Color
+            textColor = ColorDialog1.Color
+        End If
+
+
+        shape = "textWriter"
+        PictureBox1.Cursor = Cursors.IBeam
+
     End Sub
 
     Private Sub BtnFillEllipse_Click(sender As Object, e As EventArgs) Handles BtnFillEllipse.Click
         shape = "fillEllipse"
         PictureBox1.Cursor = Cursors.Cross
+    End Sub
+
+    Private Sub GuardarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GuardarToolStripMenuItem.Click
+        Dim folder As String = Path.Combine(Application.StartupPath, "Imagenes")
+        Dim gra As Graphics = Graphics.FromImage(PictureBox1.Image)
+        gra.FillRectangle(Brushes.AliceBlue, PictureBox1.ClientRectangle)
+
+        ' Si no existe la carpeta, la creamos
+        If (Not Directory.Exists(folder)) Then
+            Directory.CreateDirectory(folder)
+        End If
+
+        Try
+            ' Nombre del archivo.
+            Dim HORA As String = Now.ToLongTimeString
+            HORA = HORA.Replace(":", "_")
+            Dim fileName As String = Path.Combine(folder, HORA & ".jpg")
+
+            ' Guardamos en disco la imagen existente en el control PictureBox,
+            ' sobrescribiendo sin previo aviso cualquier otro archivo existente
+            ' con igual nombre.
+            '
+            PictureBox1.Image.Save(fileName, System.Drawing.Imaging.ImageFormat.Jpeg)
+
+        Catch ex As Exception
+            ' Se ha producido un error.
+            MessageBox.Show(ex.Message)
+
+        End Try
+
+    End Sub
+
+    Private Sub BtnColorBackground_Click(sender As Object, e As EventArgs) Handles BtnColorBackground.Click
+        PictureBox1.Cursor = Cursors.Hand
+        Dim colorFondo As Color
+        If ColorDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+            colorFondo = New Color
+            colorFondo = ColorDialog1.Color
+            PictureBox1.BackColor = colorFondo
+        End If
+    End Sub
+
+    Private Sub ChkDrb_CheckedChanged(sender As Object, e As EventArgs) Handles chkDrb.CheckedChanged
+
     End Sub
 
     Private Sub NudPenSize_ValueChanged(sender As Object, e As EventArgs) Handles nudPenSize.ValueChanged
@@ -157,6 +232,13 @@ Public Class Form1
         mp = 1
         mb = 1
         p1 = New Point(e.X, e.Y)
+
+        'Caracteristicas del texto:  tipo de fuente, tamaño, color y posicion 
+        Select Case shape
+            Case "textWriter"
+                Dim colortext As SolidBrush = New SolidBrush(textColor)
+                g.DrawString(texto, FUENTE, colortext, p1)
+        End Select
     End Sub
 
     Private Sub PictureBox1_MouseMove(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseMove
@@ -226,10 +308,6 @@ Public Class Form1
                 mypen = New Pen(pencolor, pensize)
                 r = New Rectangle(Math.Min(p1.X, p2.X), Math.Min(p1.Y, p2.Y), Math.Abs(p1.X - p2.X), Math.Abs(p1.Y - p2.Y))
                 g.DrawEllipse(mypen, r)
-            'Case "Eraser"
-            '    myeraser = New Pen(eraserColor, erasersize)
-            '    g.DrawLine(myeraser, p1, p2)
-
             Case "fillRectangle"
                 Select Case bs
                     Case "Solid"

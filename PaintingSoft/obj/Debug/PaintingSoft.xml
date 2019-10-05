@@ -52,12 +52,47 @@ PaintingSoft
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:PaintingSoft.My.Resources.Resources.icons8_add_list_50px">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PaintingSoft.My.Resources.Resources.icons8_line_50px">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PaintingSoft.My.Resources.Resources.icons8_line_50px1">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PaintingSoft.My.Resources.Resources.icons8_paint_basket_50px">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PaintingSoft.My.Resources.Resources.icons8_paint_basket_90px">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PaintingSoft.My.Resources.Resources.icons8_save_50px_1">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:PaintingSoft.My.Resources.Resources.minus_symbol">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="P:PaintingSoft.My.Resources.Resources.rounded_rectangle">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:PaintingSoft.My.Resources.Resources.splashPaintigSoft">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
