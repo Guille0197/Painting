@@ -2,7 +2,7 @@
 
 Un Paint creado con Visual Basic con UI
 
-![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+![alt text](https://github.com/Guille0197/Painting/blob/development/PaintingSoft/bin/Debug/Imagenes/PaintingSoft.PNG)
 
 ## Construido con 🛠️
 
