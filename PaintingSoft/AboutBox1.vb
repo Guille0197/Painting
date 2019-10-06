@@ -27,7 +27,7 @@
                 Timer1.Stop()
                 Timer1.Enabled = False
                 Form1.Show()
-                'Me.Close()
+                Me.Close()
 
         End Select
 
