@@ -1,4 +1,4 @@
-﻿Public NotInheritable Class AboutBox1
+﻿Public NotInheritable Class Splash
     Private iProgressBarValue As Integer = 0
     Private Sub AboutBox1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Barra de Progreso
@@ -27,9 +27,7 @@
                 Timer1.Stop()
                 Timer1.Enabled = False
                 Form1.Show()
-                Me.Close()
-
+                'Me.Close() 'Me genera un error
         End Select
-
     End Sub
 End Class
