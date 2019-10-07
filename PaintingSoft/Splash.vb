@@ -27,7 +27,7 @@
                 Timer1.Stop()
                 Timer1.Enabled = False
                 Form1.Show()
-                'Me.Close() 'Me genera un error
+                'Me.Close() 'Me genera un error y cierra todo 
         End Select
     End Sub
 End Class
