@@ -22,6 +22,6 @@ Un Paint creado con Visual Basic con UI
 
 ## Autores ✒️
 
-* **Guillermo Navarro** - *Trabajo Inicial* - [Guille0197](https://github.com/Guille0197)
+* **Guillermo Antonio Navarro** - *Trabajo Inicial* - [Guille0197](https://github.com/Guille0197)
 
 ⌨️ con ❤️ por [Guille0197](https://github.com/Guille0197) 😊
