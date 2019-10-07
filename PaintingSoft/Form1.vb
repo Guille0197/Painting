@@ -134,6 +134,7 @@ Public Class Form1
 
         Response = MsgBox(Msg, Style, Title)
         If Response = vbYes Then
+            PictureBox1.BackColor = Color.White
             g.Clear(PictureBox1.BackColor)
             brushcolor1 = Color.Black
             pensize = 2
@@ -145,7 +146,6 @@ Public Class Form1
             BtnColor2.BackColor = Color.White
             chkDrb.Checked = False
             CmbHatchStyle.Items.Clear()
-            PictureBox1.BackColor = Color.White
         Else    ' User chose No.
             MyString = "No"    ' Perform some action.
         End If
@@ -175,33 +175,44 @@ Public Class Form1
         PictureBox1.Cursor = Cursors.Cross
     End Sub
 
-    Private Sub GuardarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GuardarToolStripMenuItem.Click
-        Dim folder As String = Path.Combine(Application.StartupPath, "Imagenes")
-        Dim gra As Graphics = Graphics.FromImage(PictureBox1.Image)
-        gra.FillRectangle(Brushes.AliceBlue, PictureBox1.ClientRectangle)
+    Private Sub GuardarToolStripMenuItem_Click(sender As Object, e As EventArgs)
+        'Dim folder As String = Path.Combine(Application.StartupPath, "Imagenes")
+        'Dim gra As Graphics = Graphics.FromImage(PictureBox1.Image)
+        'gra.FillRectangle(Brushes.AliceBlue, PictureBox1.ClientRectangle)
 
-        ' Si no existe la carpeta, la creamos
-        If (Not Directory.Exists(folder)) Then
-            Directory.CreateDirectory(folder)
-        End If
+        '' Si no existe la carpeta, la creamos
+        'If (Not Directory.Exists(folder)) Then
+        '    Directory.CreateDirectory(folder)
+        'End If
 
-        Try
-            ' Nombre del archivo.
-            Dim HORA As String = Now.ToLongTimeString
-            HORA = HORA.Replace(":", "_")
-            Dim fileName As String = Path.Combine(folder, HORA & ".jpg")
+        'Try
+        '    ' Nombre del archivo.
+        '    Dim HORA As String = Now.ToLongTimeString
+        '    HORA = HORA.Replace(":", "_")
+        '    Dim fileName As String = Path.Combine(folder, HORA & ".jpg")
 
-            ' Guardamos en disco la imagen existente en el control PictureBox,
-            ' sobrescribiendo sin previo aviso cualquier otro archivo existente
-            ' con igual nombre.
-            '
-            PictureBox1.Image.Save(fileName, System.Drawing.Imaging.ImageFormat.Jpeg)
+        '    ' Guardamos en disco la imagen existente en el control PictureBox,
+        '    ' sobrescribiendo sin previo aviso cualquier otro archivo existente
+        '    ' con igual nombre.
+        '    '
+        '    PictureBox1.Image.Save(fileName, System.Drawing.Imaging.ImageFormat.Jpeg)
 
-        Catch ex As Exception
-            ' Se ha producido un error.
-            MessageBox.Show(ex.Message)
+        'Catch ex As Exception
+        '    ' Se ha producido un error.
+        '    MessageBox.Show(ex.Message)
 
-        End Try
+        'End Try
+
+        'Dim tmpImg As New Bitmap(Me.Width, Me.Height)
+        'Using g As Graphics = Graphics.FromImage(tmpImg)
+        '    g.CopyFromScreen(PointToScreen(New Point(0, 0)), New Point(0, 0), New Size(Me.Width, Me.Height))
+        'End Using
+
+        ''lo guarda en  la ubicacion deseada
+        'Dim filename = InputBox("Nombre del archivo")
+        'tmpImg.Save("C:\Users\" & SystemInformation.UserName & "\Imagenes\" & filename & ".png" & "", Imaging.ImageFormat.Png)
+
+        'MsgBox("Se implementara en la proxima versión. - BETA -")
 
     End Sub
 
@@ -284,8 +295,7 @@ Public Class Form1
                 g.DrawLines(myeraser, pts)
             End If
             num += 1
-        End If
-
+            End I
     End Sub
 
     Private Sub PictureBox1_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseUp

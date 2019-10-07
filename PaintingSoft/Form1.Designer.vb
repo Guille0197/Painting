@@ -24,32 +24,28 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.chkDrb = New System.Windows.Forms.CheckBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.nudPenSize = New System.Windows.Forms.NumericUpDown()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.BtnHatch = New System.Windows.Forms.Button()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.CmbHatchStyle = New System.Windows.Forms.ComboBox()
+        Me.BtnGradiant = New System.Windows.Forms.Button()
+        Me.BtnDraw = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.BtnTexture = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BtnColor2 = New System.Windows.Forms.Button()
         Me.BtnColor1 = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
-        Me.FontDialog1 = New System.Windows.Forms.FontDialog()
-        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.BtnHatch = New System.Windows.Forms.Button()
-        Me.BtnGradiant = New System.Windows.Forms.Button()
-        Me.BtnDraw = New System.Windows.Forms.Button()
-        Me.BtnTexture = New System.Windows.Forms.Button()
         Me.BtnSolid = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BtnColorBackground = New System.Windows.Forms.Button()
         Me.fontText = New System.Windows.Forms.Button()
         Me.BtnEllipse = New System.Windows.Forms.Button()
@@ -58,8 +54,11 @@ Partial Class Form1
         Me.BtnRectangle = New System.Windows.Forms.Button()
         Me.BtnLine = New System.Windows.Forms.Button()
         Me.BtnEraser = New System.Windows.Forms.Button()
-        Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GuardarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
+        Me.FontDialog1 = New System.Windows.Forms.FontDialog()
+        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.nudPenSize, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,12 +71,21 @@ Partial Class Form1
         'MenuStrip1
         '
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem, Me.GuardarToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1529, 33)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1529, 31)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'NuevoToolStripMenuItem
+        '
+        Me.NuevoToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NuevoToolStripMenuItem.Image = Global.PaintingSoft.My.Resources.Resources.icons8_add_list_50px
+        Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
+        Me.NuevoToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.N), System.Windows.Forms.Keys)
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(94, 27)
+        Me.NuevoToolStripMenuItem.Text = "Nuevo"
         '
         'Panel1
         '
@@ -108,9 +116,9 @@ Partial Class Form1
         Me.chkDrb.Font = New System.Drawing.Font("Arial Rounded MT Bold", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkDrb.Location = New System.Drawing.Point(1049, 128)
         Me.chkDrb.Name = "chkDrb"
-        Me.chkDrb.Size = New System.Drawing.Size(202, 24)
+        Me.chkDrb.Size = New System.Drawing.Size(221, 24)
         Me.chkDrb.TabIndex = 0
-        Me.chkDrb.Text = "Activar estilo al lápiz"
+        Me.chkDrb.Text = "Activar el estilo al lápiz"
         Me.chkDrb.UseVisualStyleBackColor = True
         '
         'Label7
@@ -151,6 +159,16 @@ Partial Class Form1
         Me.Label6.TabIndex = 14
         Me.Label6.Text = "Degradado"
         '
+        'BtnHatch
+        '
+        Me.BtnHatch.BackgroundImage = Global.PaintingSoft.My.Resources.Resources.axRecurso_7_100
+        Me.BtnHatch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnHatch.Location = New System.Drawing.Point(878, 110)
+        Me.BtnHatch.Name = "BtnHatch"
+        Me.BtnHatch.Size = New System.Drawing.Size(79, 67)
+        Me.BtnHatch.TabIndex = 9
+        Me.BtnHatch.UseVisualStyleBackColor = True
+        '
         'GroupBox6
         '
         Me.GroupBox6.Controls.Add(Me.CmbHatchStyle)
@@ -170,6 +188,26 @@ Partial Class Form1
         Me.CmbHatchStyle.Size = New System.Drawing.Size(199, 29)
         Me.CmbHatchStyle.TabIndex = 0
         '
+        'BtnGradiant
+        '
+        Me.BtnGradiant.BackgroundImage = Global.PaintingSoft.My.Resources.Resources.axRecurso_9_100
+        Me.BtnGradiant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnGradiant.Location = New System.Drawing.Point(708, 110)
+        Me.BtnGradiant.Name = "BtnGradiant"
+        Me.BtnGradiant.Size = New System.Drawing.Size(79, 67)
+        Me.BtnGradiant.TabIndex = 13
+        Me.BtnGradiant.UseVisualStyleBackColor = True
+        '
+        'BtnDraw
+        '
+        Me.BtnDraw.BackgroundImage = Global.PaintingSoft.My.Resources.Resources.xxpen
+        Me.BtnDraw.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnDraw.Location = New System.Drawing.Point(23, 41)
+        Me.BtnDraw.Name = "BtnDraw"
+        Me.BtnDraw.Size = New System.Drawing.Size(89, 67)
+        Me.BtnDraw.TabIndex = 0
+        Me.BtnDraw.UseVisualStyleBackColor = True
+        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -178,6 +216,16 @@ Partial Class Form1
         Me.Label5.Size = New System.Drawing.Size(54, 17)
         Me.Label5.TabIndex = 12
         Me.Label5.Text = "Imágen"
+        '
+        'BtnTexture
+        '
+        Me.BtnTexture.BackgroundImage = Global.PaintingSoft.My.Resources.Resources.axzzRecurso_1_100
+        Me.BtnTexture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnTexture.Location = New System.Drawing.Point(878, 30)
+        Me.BtnTexture.Name = "BtnTexture"
+        Me.BtnTexture.Size = New System.Drawing.Size(79, 67)
+        Me.BtnTexture.TabIndex = 11
+        Me.BtnTexture.UseVisualStyleBackColor = True
         '
         'GroupBox3
         '
@@ -238,6 +286,16 @@ Partial Class Form1
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Solido"
         '
+        'BtnSolid
+        '
+        Me.BtnSolid.BackgroundImage = Global.PaintingSoft.My.Resources.Resources.aRecurso_5_100
+        Me.BtnSolid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnSolid.Location = New System.Drawing.Point(708, 30)
+        Me.BtnSolid.Name = "BtnSolid"
+        Me.BtnSolid.Size = New System.Drawing.Size(79, 67)
+        Me.BtnSolid.TabIndex = 8
+        Me.BtnSolid.UseVisualStyleBackColor = True
+        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.BtnColorBackground)
@@ -255,70 +313,6 @@ Partial Class Form1
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Diseño"
-        '
-        'OpenFileDialog1
-        '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.White
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 263)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1502, 644)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 2
-        Me.PictureBox1.TabStop = False
-        '
-        'BtnHatch
-        '
-        Me.BtnHatch.BackgroundImage = Global.PaintingSoft.My.Resources.Resources.axRecurso_7_100
-        Me.BtnHatch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnHatch.Location = New System.Drawing.Point(878, 110)
-        Me.BtnHatch.Name = "BtnHatch"
-        Me.BtnHatch.Size = New System.Drawing.Size(79, 67)
-        Me.BtnHatch.TabIndex = 9
-        Me.BtnHatch.UseVisualStyleBackColor = True
-        '
-        'BtnGradiant
-        '
-        Me.BtnGradiant.BackgroundImage = Global.PaintingSoft.My.Resources.Resources.axRecurso_9_100
-        Me.BtnGradiant.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnGradiant.Location = New System.Drawing.Point(708, 110)
-        Me.BtnGradiant.Name = "BtnGradiant"
-        Me.BtnGradiant.Size = New System.Drawing.Size(79, 67)
-        Me.BtnGradiant.TabIndex = 13
-        Me.BtnGradiant.UseVisualStyleBackColor = True
-        '
-        'BtnDraw
-        '
-        Me.BtnDraw.BackgroundImage = Global.PaintingSoft.My.Resources.Resources.xxpen
-        Me.BtnDraw.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnDraw.Location = New System.Drawing.Point(23, 41)
-        Me.BtnDraw.Name = "BtnDraw"
-        Me.BtnDraw.Size = New System.Drawing.Size(89, 67)
-        Me.BtnDraw.TabIndex = 0
-        Me.BtnDraw.UseVisualStyleBackColor = True
-        '
-        'BtnTexture
-        '
-        Me.BtnTexture.BackgroundImage = Global.PaintingSoft.My.Resources.Resources.axzzRecurso_1_100
-        Me.BtnTexture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnTexture.Location = New System.Drawing.Point(878, 30)
-        Me.BtnTexture.Name = "BtnTexture"
-        Me.BtnTexture.Size = New System.Drawing.Size(79, 67)
-        Me.BtnTexture.TabIndex = 11
-        Me.BtnTexture.UseVisualStyleBackColor = True
-        '
-        'BtnSolid
-        '
-        Me.BtnSolid.BackgroundImage = Global.PaintingSoft.My.Resources.Resources.aRecurso_5_100
-        Me.BtnSolid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnSolid.Location = New System.Drawing.Point(708, 30)
-        Me.BtnSolid.Name = "BtnSolid"
-        Me.BtnSolid.Size = New System.Drawing.Size(79, 67)
-        Me.BtnSolid.TabIndex = 8
-        Me.BtnSolid.UseVisualStyleBackColor = True
         '
         'BtnColorBackground
         '
@@ -403,23 +397,19 @@ Partial Class Form1
         Me.BtnEraser.TabIndex = 1
         Me.BtnEraser.UseVisualStyleBackColor = True
         '
-        'NuevoToolStripMenuItem
+        'OpenFileDialog1
         '
-        Me.NuevoToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NuevoToolStripMenuItem.Image = Global.PaintingSoft.My.Resources.Resources.icons8_add_list_50px
-        Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.N), System.Windows.Forms.Keys)
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(94, 29)
-        Me.NuevoToolStripMenuItem.Text = "Nuevo"
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'GuardarToolStripMenuItem
+        'PictureBox1
         '
-        Me.GuardarToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GuardarToolStripMenuItem.Image = Global.PaintingSoft.My.Resources.Resources.icons8_save_50px_1
-        Me.GuardarToolStripMenuItem.Name = "GuardarToolStripMenuItem"
-        Me.GuardarToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.GuardarToolStripMenuItem.Size = New System.Drawing.Size(115, 29)
-        Me.GuardarToolStripMenuItem.Text = "Guardar"
+        Me.PictureBox1.BackColor = System.Drawing.Color.White
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 263)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(1502, 644)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 2
+        Me.PictureBox1.TabStop = False
         '
         'Form1
         '
