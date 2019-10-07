@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.PaintingSoft.AboutBox1
+            Me.MainForm = Global.PaintingSoft.Splash
         End Sub
     End Class
 End Namespace
